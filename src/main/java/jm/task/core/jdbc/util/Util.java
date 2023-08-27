@@ -10,12 +10,13 @@ import java.sql.SQLException;
 
 
 public class Util {
-    // реализуйте настройку соединения с БД
-    private static SessionFactory factory;
+
+    private static SessionFactory factory;//TODO убираем лишние комментарии
     private static final String DRIVER = "java.sql.Driver";
-    private static final String USERNAME = "ivana";
     private static final String URL = "jdbc:mysql://localhost:3306/mydb";
-    private static final String PASSWORD = "Rft8qFPRRXXz";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "my179sql";
+
     static {
         try {
             factory = new Configuration().addAnnotatedClass(User.class).buildSessionFactory();

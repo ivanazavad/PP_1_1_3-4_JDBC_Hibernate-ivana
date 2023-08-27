@@ -7,7 +7,9 @@ import jm.task.core.jdbc.model.User;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
+
     UserDao userDao = new UserDaoHibernateImpl();
+
     public void createUsersTable() {
         userDao.createUsersTable();
     }
@@ -21,7 +23,7 @@ public class UserServiceImpl implements UserService {
         System.out.println("User с именем " + name + " добавлен в базу данных");
     }
 
-    public void removeUserById(long id) {
+    public void removeUserById(long id) {//TODO стоит(необходимо) добавить валидацию
         userDao.removeUserById(id);
     }
 

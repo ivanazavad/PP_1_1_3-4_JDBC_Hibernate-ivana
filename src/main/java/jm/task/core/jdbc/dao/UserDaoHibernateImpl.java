@@ -9,16 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
+
     private final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS users ("
             + " id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,"
             + "name VARCHAR(30) NOT NULL,"
             + "lastName VARCHAR(30) NOT NULL,"
             + "age INT)";
     private final String DROP_TABLE = "DROP TABLE IF EXISTS users";
-    private String CLEAN_TABLE = "TRUNCATE TABLE users";
-    private Session session = Util.getSessionFactory().openSession();
-    public UserDaoHibernateImpl() {
+    private final String CLEAN_TABLE = "TRUNCATE TABLE users";
 
+    private final Session session = Util.getSessionFactory().openSession();
+
+    public UserDaoHibernateImpl() {
     }
 
 
@@ -103,6 +105,5 @@ public class UserDaoHibernateImpl implements UserDao {
                 session.getTransaction().rollback();
             }
         }
-
     }
 }
